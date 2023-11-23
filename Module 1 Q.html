@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Interactive Q&A</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        padding: 20px;
+    }
+    .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        max-width: 600px;
+        margin: auto;
+    }
+    .question, .answer {
+        display: none;
+        margin-bottom: 20px;
+    }
+    .visible {
+        display: block;
+    }
+    button {
+        background-color: #ffd700;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    button:hover {
+        background-color: #e6c200;
+    }
+    textarea {
+        width: 100%;
+        height: 100px;
+        padding: 10px;
+        margin: 10px 0;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="question visible" id="question1">
+        <p>One of the nurses in the simulation was displaying symptoms of burnout. What symptoms did you notice?</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(1)">Submit</button>
+    </div>
+    <div class="answer" id="answer1">
+        <p>Apathy, depersonalization, irritability</p>
+        <button onclick="showQuestion(2)">Next</button>
+    </div>
+
+    <div class="question" id="question2">
+        <p>One of the nurses in the simulation was displaying symptoms of moral distress. What symptoms did you notice?</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(2)">Submit</button>
+    </div>
+    <div class="answer" id="answer2">
+        <p>Irritability, crying on the way to work, upset about co-workers' attitudes towards older adults</p>
+        <button onclick="showQuestion(3)">Next</button>
+    </div>
+
+    <div class="question" id="question3">
+        <p>Provide some real or hypothetical examples of workplace situations that might trigger feelings of moral distress?</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(3)">Submit</button>
+    </div>
+    <div class="answer" id="answer3">
+        <p>There are many situations in nursing that may trigger feelings of moral distress. For example: participating in a code blue on a 98-year-old frail adult, having to remove a young person from a ventilator because they are brain dead, not being able to talk to your crying patient because you have eight others to look after, caring for patients who don’t participate in their own self-care. The key is to recognize that something is bothering you and work towards resolving your feelings versus letting it get out of hand.</p>
+        <button onclick="showQuestion(4)">Next</button>
+    </div>
+
+    <div class="question" id="question4">
+        <p>How could you respond to personal feelings of moral distress or to a colleague exhibiting moral distress on your unit?</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(4)">Submit</button>
+    </div>
+    <div class="answer" id="answer4">
+        <p>Consider the 4 R’s: Recognize the situation. Release past experiences or issues you can’t change. Reconsider or reframe the issue. Restart with new questions or new ideas.</p>
+        <button onclick="endQuestions()">End</button>
+    </div>
+</div>
+
+<script>
+    function showAnswer(questionNum) {
+        var answerId = "answer" + questionNum;
+        var questionId = "question" + questionNum;
+        document.getElementById(answerId).style.display = 'block';
+        document.getElementById(questionId).style.display = 'none';
+    }
+
+    function showQuestion(questionNum) {
+        var nextQuestionId = "question" + questionNum;
+        var prevAnswerId = "answer" + (questionNum - 1);
+        document.getElementById(prevAnswerId).style.display = 'none';
+        document.getElementById(nextQuestionId).style.display = 'block';
+    }
+
+    function endQuestions() {
+        var lastAnswerId = "answer4";
+        document.getElementById(lastAnswerId).innerHTML = "<p>End of questions. Thank you for participating.</p>";
+    }
+</script>
+
+</body>
+</html>
