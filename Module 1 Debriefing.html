@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Q&A</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: auto;
+        }
+        .question, .answer {
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #ffd700;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #e6c200;
+        }
+        textarea, input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Question 1 -->
+    <div class="question" id="question1">
+        <p>How could you differentiate between heavy versus unsafe nursing assignments? (Identify and discuss 3 examples)</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(1)">Submit</button>
+    </div>
+    <div class="answer" id="answer1" style="display: none;">
+        <p>Correct answers:</p>
+        <ol>
+            <li>It may be just a heavy assignment if you are still able to give care to your assigned patients ensuring no medically necessary care is missed (e.g., medications are given, dressings are changed, people are fed, etc.). However, you may be unable to give complete baths/showers or change bedding.</li>
+            <li>It may just be a very heavy assignment if you do not get a break and/or only get a limited lunch. If, however, you cannot leave your assigned floor at all, or even take time for a biological break, this situation may be bordering on an unsafe assignment. Discuss what is happening as soon as possible with your charge nurse.</li>
+            <li>It may be an unsafe work environment if one or more of your patients is having a medical emergency and this will not allow you to care for other patients assigned to you. This situation must be reported to the charge nurse so that help can be provided to ensure patient safety.</li>
+            <li>The judgement of whether an assignment is heavy or unsafe will depend on the acuity of the patient assignment. If many of your assigned patients are of a high acuity, you have limited help, and you believe patients will be harmed because you cannot safely care for them, it is your right to challenge the assignment.</li>
+        </ol>
+        <button onclick="showQuestion(2)">Next</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="question2" style="display: none;">
+        <p>Who do you talk to and in what order if you are concerned with your nursing assignment?</p>
+        <table>
+            <tr>
+                <th>Person</th>
+                <th>Your Answer (1-6)</th>
+            </tr>
+            <tr>
+                <td>Charge Nurse</td>
+                <td><input type="number" id="chargeNurseAnswer" min="1" max="6"></td>
+            </tr>
+            <tr>
+                <td>Nurse Manager</td>
+                <td><input type="number" id="nurseManagerAnswer" min="1" max="6"></td>
+            </tr>
+            <tr>
+                <td>Unit Director or VP</td>
+                <td><input type="number" id="unitDirectorAnswer" min="1" max="6"></td>
+            </tr>
+            <tr>
+                <td>Your Union Rep</td>
+                <td><input type="number" id="unionRepAnswer" min="1" max="6"></td>
+            </tr>
+            <tr>
+                <td>Ministry of Labour</td>
+                <td><input type="number" id="labourMinistryAnswer" min="1" max="6"></td>
+            </tr>
+            <tr>
+                <td>Your workplace President and CEO</td>
+                <td><input type="number" id="ceoAnswer" min="1" max="6"></td>
+            </tr>
+        </table>
+        <button onclick="showAnswer(2)">Submit</button>
+    </div>
+    <div class="answer" id="answer2" style="display: none;">
+        <p>The correct order is typically: 1. Charge Nurse, 2. Nurse Manager, 3. Unit Director or VP, 4. Your Union Rep, 5. Ministry of Labour, 6. Your workplace President and CEO.</p>
+        <p>Rationale: Always start with the person who is in charge and closest to patient care. The Charge Nurse will want to know why you think your assignment is unsafe. If you explain it and they are unconvinced, you may need to escalate it to the next level, which is the Unit Manager. If the Unit Manager does not provide you with an adequate response the next step is to contact the Unit Director/VP. Next, you should report the issue to your union rep but know that this process may take time, and they cannot usually help you in an urgent situation. If you believe that your assignment is truly unsafe and will cause patient harm, you can refuse the work assignment and file an official complaint with the Ministry of Labour. Some organization Presidents and CEOs are readily available to call but usually they will refer you back to your Unit manager/director or VP.</p>
+        <button onclick="showQuestion(3)">Next</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="question3" style="display: none;">
+        <p>Many new nurses are concerned that if they make a mistake when caring for patients, they are at risk of losing their nursing licence. Please list in what circumstances you believe this may be the case.</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(3)">Submit</button>
+    </div>
+    <div class="answer" id="answer3" style="display: none;">
+        <p>Registered Nurses typically will be reported to the governing College/Association for their province if they intentionally harm a patient, override system checks and give incorrect medications or treatments, work beyond the scope of their practice category, breach the professional/patient relationship, misappropriate either objects or payment from a patient’s house or work facility (e.g., benefits program) or falsify records. Please refer to your practice standards for your province or territory for more details.</p>
+        <button onclick="showQuestion(4)">Next</button>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question" id="question4" style="display: none;">
+        <p>How could you start a conversation about your workload with a charge nurse?</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(4)">Submit</button>
+    </div>
+    <div class="answer" id="answer4" style="display: none;">
+        <p>Come prepared, list your concerns, and be ready to discuss your issues. Listen to what the person has to say in response, keep your tone respectful, and be polite and calm. If you do not feel that you are getting what you need, be prepared to escalate your concerns to the next level. Let the person know if you are going on to the next level.</p>
+    </div>
+</div>
+
+<script>
+    function showQuestion(questionNum) {
+        var allQuestions = document.querySelectorAll('.question, .answer');
+        allQuestions.forEach(function(element) {
+            element.style.display = 'none';
+        });
+        var questionId = "question" + questionNum;
+        document.getElementById(questionId).style.display = 'block';
+    }
+
+    function showAnswer(questionNum) {
+        var questionId = "question" + questionNum;
+        var answerId = "answer" + questionNum;
+        document.getElementById(questionId).style.display = 'none';
+        document.getElementById(answerId).style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
