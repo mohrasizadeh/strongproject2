@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trauma-Informed Care in Nursing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: auto;
+        }
+        .question, .answer {
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #ffd700;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #e6c200;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Question 1 -->
+    <div class="question" id="question1">
+        <p>What is trauma-informed care (TIC)?</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(1)">Submit</button>
+    </div>
+    <div class="answer" id="answer1" style="display: none;">
+        <p>Trauma-informed care involves the knowledge and recognition of trauma paired with respect, concern, and empathy.</p>
+        <button onclick="showQuestion(2)">Next</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="question2" style="display: none;">
+        <p>What kind of behaviours might characterize or be indicative of a trauma response in a patient?</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(2)">Submit</button>
+    </div>
+    <div class="answer" id="answer2" style="display: none;">
+        <p>Patients with a past history of trauma may be triggered by the healthcare system and find it threatening. This might include specific stimuli (e.g., restraints, closed doors, being touched) or an assessment/event (e.g., pelvic exam) and show an abrupt change in their behaviour, cognitions, or emotions. For example, they may seem tense or agitated, tearful, appear to “act out”, display a strong startle response, appear dysregulated, or hypervigilant. They could also be disconnected from their thoughts, emotions, and surroundings, and may disengage from you and/or have a sudden reduction in their mood and/or social engagement (e.g., appearing to zone out). They may also avoid people and places (such as hospitals) because they remind them of the traumatic event.</p>
+        <button onclick="showQuestion(3)">Next</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="question3" style="display: none;">
+        <p>What types of nursing care are at highest risk for triggering a trauma response, either in patients or healthcare workers?</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(3)">Submit</button>
+    </div>
+    <div class="answer" id="answer3" style="display: none;">
+        <p>Patients and healthcare workers may be triggered by sensory stimuli/information (e.g., sights, smells, sounds, tastes, pain), small or tight spaces (e.g., closed doors), restraints, assessments/exams (such as pelvic exams), bathing/dressing/grooming activities, medication side effects or sedation. Healthcare workers who are employed in high-acuity settings (with high patient/nurse ratios), have exposure to extreme stress with little to no control, and who have witnessed traumatic events (i.e., vicarious trauma) are at elevated risk for mental health concerns (e.g., anxiety, depression, PTSD), burnout, and compassion fatigue.</p>
+        <button onclick="showQuestion(4)">Next</button>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question" id="question4" style="display: none;">
+        <p>How can you incorporate the principles of TIC in your nursing practice? (Use the virtual simulation game you just saw as an example)</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(4)">Submit</button>
+    </div>
+    <div class="answer" id="answer4" style="display: none;">
+        <p>Safety. Trauma disrupts a person’s sense of safety. Find out what they consider safe and comfortable by actively listening, asking questions about their personal history, and showing empathy and concern. Approach them slowly and calmly, with 1-2 RNs/allied HCPs, and employ de-escalation strategies if necessary (e.g., grounding). Use trauma-sensitive language.<br>
+        Trust and transparency: Build trust by explaining what you are doing, and why you are doing it (responding with compassion and answering questions if the patient is hesitant).<br>
+        Collaboration: Help the patient make informed decisions and work towards consistency in care from all providers. Interdisciplinary communication is key: document history in the patient’s chart with sensitivity so others are aware and maintain open lines of communication.<br>
+        Empowerment: Acknowledge the patient’s struggles and contributions to the process, emphasizing positive feedback for any efforts they make. Also seek support or consult with a charge nurse, a team leader, or a peer supervisor if you are unsure of how to proceed.</p>
+        <button onclick="showQuestion(5)">Next</button>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question" id="question5" style="display: none;">
+        <p>How can you incorporate TIC practices in yourself, and in supporting your coworkers?</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(5)">Submit</button>
+    </div>
+    <div class="answer" id="answer5" style="display: none;">
+        <p><b>Self:</b> Acknowledge that your feelings are valid. Anger, sadness, hopelessness, and grief are all common emotional responses to stressful experiences. In moments where you feel overwhelmed, try to ground yourself. Pay attention to your negative thoughts and judgements about yourself and try to address them. Be kind and show yourself compassion and prioritize your own needs. This may include ensuring you are hydrated, eating balanced meals, setting boundaries, engaging in mindfulness practices, and reaching out to others for support (e.g., trusted friends/peers or seek professional support services).<br>
+        <b>Others:</b> Actively and empathically listen. Share that they are not alone. Ask about coping strategies, including challenging unproductive thoughts, practicing self-compassion, and self-soothing/grounding techniques. Be patient. Provide guidance regarding professional or institutional support.</p>
+    </div>
+</div>
+
+<script>
+    function showQuestion(questionNum) {
+        var allQuestions = document.querySelectorAll('.question, .answer');
+        allQuestions.forEach(function(element) {
+            element.style.display = 'none';
+        });
+        var questionId = "question" + questionNum;
+        document.getElementById(questionId).style.display = 'block';
+    }
+
+    function showAnswer(questionNum) {
+        var questionId = "question" + questionNum;
+        var answerId = "answer" + questionNum;
+        document.getElementById(questionId).style.display = 'none';
+        document.getElementById(answerId).style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
