@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Handling Emotional Distress in Nursing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: auto;
+        }
+        .question, .answer {
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #ffd700;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #e6c200;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Question 1 -->
+    <div class="question" id="question1">
+        <p>Dealing with an emotionally-distressing event such as a patient death at work is challenging. What can you do to process these feelings in the moment?</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(1)">Submit</button>
+    </div>
+    <div class="answer" id="answer1" style="display: none;">
+        <p>You may have only a few minutes to process your emotions; find out whether you might be able to adjust your scheduled break to give yourself a bit more time. You may not have time to identify and acknowledge every emotion you are feeling but it vital that you address them at some point. Unresolved emotions may cause you to second-guess yourself in the future, withdraw emotionally or prolong the grief process. The experience of grief and trauma can be cumulative. Talk to a trusted peer so you don’t have to face difficult emotions alone.</p>
+        <button onclick="showQuestion(2)">Next</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="question2" style="display: none;">
+        <p>What immediate calming strategies could you use if you were very upset at work?</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(2)">Submit</button>
+    </div>
+    <div class="answer" id="answer2" style="display: none;">
+        <p>There are several types of grounding exercises that can address physiological dysregulation. These include abdominal breathing, guided imagery, and meditation.</p>
+        <button onclick="showQuestion(3)">Next</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="question3" style="display: none;">
+        <p>How would you know you’re so compromised that you have to leave work, or take a break?</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(3)">Submit</button>
+    </div>
+    <div class="answer" id="answer3" style="display: none;">
+        <p>Patient safety is critical. Speak with the charge nurse if your emotional state is influencing your ability to do your job safely. Signs that you might be too compromised to work include difficulty remembering key information, thinking critically or problem-solving, feeling overwhelmed or paralyzed by emotion, making trivial mistakes or finding yourself unable to focus. If possible, try to anticipate the events that might trigger a strong reaction. For example, if your beloved grandmother passed recently, you may want to speak with the charge nurse about changing your assignment if you are assigned a dying older woman. If you have suffered from pregnancy or infant loss, you might want to avoid working with expectant or new parents.</p>
+    </div>
+</div>
+
+<script>
+    function showQuestion(questionNum) {
+        var allQuestions = document.querySelectorAll('.question, .answer');
+        allQuestions.forEach(function(element) {
+            element.style.display = 'none';
+        });
+        var questionId = "question" + questionNum;
+        document.getElementById(questionId).style.display = 'block';
+    }
+
+    function showAnswer(questionNum) {
+        var questionId = "question" + questionNum;
+        var answerId = "answer" + questionNum;
+        document.getElementById(questionId).style.display = 'none';
+        document.getElementById(answerId).style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

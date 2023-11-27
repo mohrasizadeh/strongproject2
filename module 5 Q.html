@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mental Health and Confidentiality in Nursing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: auto;
+        }
+        .question, .answer {
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #ffd700;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #e6c200;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Question 1 -->
+    <div class="question" id="question1">
+        <p>Reflect on the information that the charge nurse shared about colleagues with other nurses on the unit. Which comments made by the charge nurse would be considered a breach of confidentiality?</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(1)">Submit</button>
+    </div>
+    <div class="answer" id="answer1" style="display: none;">
+        <p>All health information (medical, physical, or psychological) is confidential unless the person explicitly approved sharing of the information. An acceptable comment in this situation would be “Nurse XX is on leave and the expectation of privacy is standard practice in this hospital.”</p>
+        <button onclick="showQuestion(2)">Next</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="question2" style="display: none;">
+        <p>List and describe common types of stigma experienced in healthcare settings.</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(2)">Submit</button>
+    </div>
+    <div class="answer" id="answer2" style="display: none;">
+        <p>Self-stigma: negative ideas/perceptions or attitudes about yourself.<br>
+        Patient-directed stigma: negative ideas/perceptions or attitudes and/or discrimination against patients.<br>
+        Colleague-directed stigma: negative ideas/perceptions or attitudes and/or discrimination against colleagues.</p>
+        <button onclick="showQuestion(3)">Next</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="question3" style="display: none;">
+        <p>What do you think stops nurses from speaking up about mental health stigma?</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(3)">Submit</button>
+    </div>
+    <div class="answer" id="answer3" style="display: none;">
+        <p>• Nurses are socialized to take abuse and not make formal complaints<br>
+        • Normalization of heavy workloads<br>
+        • Assumption that nurses should just “deal with” the job<br>
+        • The “hero mentality” attributed to healthcare workers that they shouldn’t need help<br>
+        • Unspoken rules for acceptable vs unacceptable reasons for time off<br>
+        • Stigma experienced by colleagues and supervisors</p>
+        <button onclick="showQuestion(4)">Next</button>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question" id="question4" style="display: none;">
+        <p>How could you support others in speaking up when stigma is expressed in the workplace?</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(4)">Submit</button>
+    </div>
+    <div class="answer" id="answer4" style="display: none;">
+        <p>Many people who are verbalizing mental health stigma may not be aware of it. Professional feedback or open-ended questions may encourage others to self-reflect. For example, “It seems as though you view mental health disturbances differently from physical concerns. Why should they be treated differently?” or “Everyone struggles with their mental wellness at some point in their life. I’m glad that they are being proactive about seeking assistance.”</p>
+    </div>
+</div>
+
+<script>
+    function showQuestion(questionNum) {
+        var allQuestions = document.querySelectorAll('.question, .answer');
+        allQuestions.forEach(function(element) {
+            element.style.display = 'none';
+        });
+        var questionId = "question" + questionNum;
+        document.getElementById(questionId).style.display = 'block';
+    }
+
+    function showAnswer(questionNum) {
+        var questionId = "question" + questionNum;
+        var answerId = "answer" + questionNum;
+        document.getElementById(questionId).style.display = 'none';
+        document.getElementById(answerId).style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

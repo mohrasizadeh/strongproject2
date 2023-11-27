@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teamwork and Stress Management in Healthcare</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: auto;
+        }
+        .question, .answer {
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #ffd700;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #e6c200;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Question 1 -->
+    <div class="question" id="question1">
+        <p>How do periods of extreme stress in healthcare organizations (e.g., COVID-19) impact multidisciplinary teamwork?</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(1)">Submit</button>
+    </div>
+    <div class="answer" id="answer1" style="display: none;">
+        <p>During periods of extreme stress, nurses may be redeployed to different units, assigned to new teams, experience understaffing and high patient acuity, and take on added responsibilities outside of their usual roles. They may be placed in unstable or constantly-shifting work environments, with little to no warning. This can lead to role conflict/blurred roles, lack of familiarization of team members’ expertise, lack of trust, and exacerbation of hierarchal interactions, with some specialities feeling “lesser than” others, which could lead to conflict, incivility and bullying. Resources may be allocated to certain departments over others. Without proper communication, delegation, and leadership, these changes can result in tension, mistrust, confusion, and uncertainty, and will ultimately impact patient care, particularly in life-or-death situations. In fact, research has shown that a breakdown in communication is the root cause of 2/3 of adverse events reported in hospitals. Hospitals that foster a culture of teamwork and collaboration benefit everyone in numerous ways, including increased patient safety ratings and lower nurse turnover.</p>
+        <button onclick="showQuestion(2)">Next</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="question2" style="display: none;">
+        <p>When working within a multidisciplinary team, how can you enhance teamwork while also effectively communicating your needs, and the needs of your patients?</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(2)">Submit</button>
+    </div>
+    <div class="answer" id="answer2" style="display: none;">
+        <p>In addition to learning more about each person’s area of expertise and their decision-making process regarding your patient, as well as putting yourself in their shoes, consider:<br>
+        • Common goal setting<br>
+        • Building cohesion and openness<br>
+        • Checking in and questioning processes as needed<br>
+        • Providing honest and unbiased feedback<br>
+        • Cultivating a respectful community characterized by appreciation of others’ values<br>
+        • Also see: TeamSTEPPS Pocket Guide (ahrq.gov)</p>
+        <button onclick="showQuestion(3)">Next</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="question3" style="display: none;">
+        <p>If conflict arises within a multidisciplinary team in a healthcare setting, how would you try to mitigate it?</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(3)">Submit</button>
+    </div>
+    <div class="answer" id="answer3" style="display: none;">
+        <p>• Recognize conflict early: Pay attention to body language and use of language<br>
+        • Be proactive: Avoiding conflict may cause frustration and escalate the problem.<br>
+        • Actively listen: The ability to listen actively can improve interpersonal relationships, reduce conflicts, foster understanding, and improve cooperation.<br>
+        • Remain calm: Keep responses under control and emotions in check.<br>
+        • Define the problem: An understanding of the issues at stake and the conflicts between them will help minimize miscommunication and facilitate resolution.<br>
+        • Seek a solution: Try to manage the conflict in a way that creates an acceptable solution for both parties.</p>
+    </div>
+</div>
+
+<script>
+    function showQuestion(questionNum) {
+        var allQuestions = document.querySelectorAll('.question, .answer');
+        allQuestions.forEach(function(element) {
+            element.style.display = 'none';
+        });
+        var questionId = "question" + questionNum;
+        document.getElementById(questionId).style.display = 'block';
+    }
+
+    function showAnswer(questionNum) {
+        var questionId = "question" + questionNum;
+        var answerId = "answer" + questionNum;
+        document.getElementById(questionId).style.display = 'none';
+        document.getElementById(answerId).style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

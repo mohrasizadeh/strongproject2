@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nursing Ethics and Burnout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: auto;
+        }
+        .question, .answer {
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #ffd700;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #e6c200;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Question 1 -->
+    <div class="question" id="question1">
+        <p>Moral distress is the negative feelings that arise when you know the morally correct action to take but there are institutional or systemic barriers that impede that action. What are the main values guiding your work as a nurse? How would you feel if these came into conflict with your employer’s policies?</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(1)">Submit</button>
+    </div>
+    <div class="answer" id="answer1" style="display: none;">
+        <p>Moral distress can occur when there is misalignment between one’s personal values and organizational ones. You must start by identifying the source of your moral distress. There is a difference between being irritated or annoyed about a workplace issue and facing an issue that conflicts with one of your deeply-held values. A workplace interdisciplinary ethics committee might help to establish processes to mitigate morally distressing issues (e.g., distribution of scarce resources). If an issue is repeatedly invoking feelings of moral distress, document it to identify recurring issues and patterns.</p>
+        <button onclick="showQuestion(2)">Next</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="question2" style="display: none;">
+        <p>Burnout is the prolonged response associated with chronic workplace stress that has not been adequately managed. What are ways you and your co-workers can address burnout?</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(2)">Submit</button>
+    </div>
+    <div class="answer" id="answer2" style="display: none;">
+        <p>Set boundaries: take your vacation days, lunch breaks, do not consistently stay late without pay. Prioritize self-care by taking lunch breaks, bathroom breaks, exercise, explore hobbies. Have a life outside of work; this may include seeing non-work friends, or turning off your phone ringer to avoid calls about extra shifts on days off.</p>
+        <button onclick="showQuestion(3)">Next</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="question3" style="display: none;">
+        <p>What would be difficult about setting boundaries with your employer? What could you do to make it easier?</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(3)">Submit</button>
+    </div>
+    <div class="answer" id="answer3" style="display: none;">
+        <p>Most nurses care deeply about their patients and their co-workers. They do not want to feel as though they are letting others down. However, it is important to identify the stressors/issues that you have control over and the ones that are the responsibility of the organization. For example, if your unit is always short-staffed, it is NOT your responsibility to give up your days off to remedy this situation.</p>
+    </div>
+</div>
+
+<script>
+    function showQuestion(questionNum) {
+        var allQuestions = document.querySelectorAll('.question, .answer');
+        allQuestions.forEach(function(element) {
+            element.style.display = 'none';
+        });
+        var questionId = "question" + questionNum;
+        document.getElementById(questionId).style.display = 'block';
+    }
+
+    function showAnswer(questionNum) {
+        var questionId = "question" + questionNum;
+        var answerId = "answer" + questionNum;
+        document.getElementById(questionId).style.display = 'none';
+        document.getElementById(answerId).style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

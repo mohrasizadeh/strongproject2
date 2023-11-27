@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Addressing Mental Health in the Workplace</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: auto;
+        }
+        .question, .answer {
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #ffd700;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #e6c200;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Question 1 -->
+    <div class="question" id="question1">
+        <p>How would you handle a situation where you think you might need to address mental health symptoms with a colleague? What would you say or do if a co-worker is exhibiting signs of mental health disturbances?</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(1)">Submit</button>
+    </div>
+    <div class="answer" id="answer1" style="display: none;">
+        <p>Talk to the person you are concerned about and share your observations. If you are worried that the person may harm themself or another person, get immediate assistance (e.g., call a suicide hotline, take them to the emergency room, call the police). If patient safety is compromised, you may need to speak with the charge nurse as well. Encourage the affected coworker to explore available resources (e.g., EAP, peer support, hotlines) to address their symptoms.</p>
+        <button onclick="showQuestion(2)">Next</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="question2" style="display: none;">
+        <p>If a colleague asked for your help, what would you recommend?</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(2)">Submit</button>
+    </div>
+    <div class="answer" id="answer2" style="display: none;">
+        <p>Listen carefully to what they identify as the issue (e.g., physical, emotional, social). Are they lonely, exhausted, irritable and frustrated or experiencing strained relationships? Try to match the support and self-care strategies to the issue. Ask them what has worked for them in the past and help problem-solve how they can re-engage with strategies or techniques that have been useful previously.</p>
+        <button onclick="showQuestion(3)">Next</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="question3" style="display: none;">
+        <p>What are some self-care strategies that you could implement regularly to improve your mental wellbeing at work?</p>
+        <textarea placeholder="Type your answer here..."></textarea>
+        <button onclick="showAnswer(3)">Submit</button>
+    </div>
+    <div class="answer" id="answer3" style="display: none;">
+        <p>Research studies with nurses, nursing students and other healthcare professionals have found support for the following techniques:<br>
+        • Resilience training and wellbeing<br>
+        • Mindfulness-based interventions, Cognitive Behavioral Training (CBT) strategies and restorative supervision<br>
+        • Building social support networks within and outside of work<br>
+        • Psychotherapy and exercise<br>
+        • Deep breathing and gratitude</p>
+    </div>
+</div>
+
+<script>
+    function showQuestion(questionNum) {
+        var allQuestions = document.querySelectorAll('.question, .answer');
+        allQuestions.forEach(function(element) {
+            element.style.display = 'none';
+        });
+        var questionId = "question" + questionNum;
+        document.getElementById(questionId).style.display = 'block';
+    }
+
+    function showAnswer(questionNum) {
+        var questionId = "question" + questionNum;
+        var answerId = "answer" + questionNum;
+        document.getElementById(questionId).style.display = 'none';
+        document.getElementById(answerId).style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
