@@ -143,19 +143,22 @@
 </div>
 
 <script>
-    function showAnswer(questionNum) {
-        var answerId = "answer" + questionNum;
+    function showQuestion(questionNum) {
+        var allQuestions = document.querySelectorAll('.question, .answer');
+        allQuestions.forEach(function(element) {
+            element.style.display = 'none';
+        });
         var questionId = "question" + questionNum;
-        var questionTextarea = document.querySelector('#' + questionId + ' textarea');
-        // Check if answer is provided
-        if (questionTextarea.value.trim() === '') {
-            alert('Please provide an answer before submitting.');
-            return;
-        }
+        document.getElementById(questionId).style.display = 'block';
+    }
+
+    function showAnswer(questionNum) {
+        var questionId = "question" + questionNum;
+        var answerId = "answer" + questionNum;
+        document.getElementById(questionId).style.display = 'none';
         document.getElementById(answerId).style.display = 'block';
     }
 </script>
-
 
 </body>
 </html>
